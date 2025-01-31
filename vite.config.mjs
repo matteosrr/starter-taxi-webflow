@@ -16,7 +16,7 @@ export default defineConfig({
     minify: true,
     manifest: true,
     rollupOptions: {
-      input: 'src/app.js',
+      input: './src/app.js',
       output: {
         format: 'umd',
         entryFileNames: 'app.js',
