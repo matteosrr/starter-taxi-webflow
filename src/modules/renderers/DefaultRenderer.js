@@ -1,6 +1,11 @@
 import { Renderer } from '@unseenco/taxi'
 
 export default class DefaultRenderer extends Renderer {
+  initialLoad() {
+    // run the first time a user enters a page
+    console.log('initialLoad')
+  }
+
   onEnter() {
     console.log('on enter')
   }

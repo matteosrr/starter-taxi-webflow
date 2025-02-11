@@ -6,16 +6,14 @@ import DefaultTransition from './transitions/DefaultTransition'
 export class Pages extends Core {
   constructor() {
     super({
-      removeOldContent: true,
+      links: 'a:not([target]):not([href^=\\#]):not([data-taxi-ignore])',
       renderers: {
-        default: DefaultRenderer,
+        default: CustomRenderer,
       },
       transitions: {
-        default: DefaultTransition,
+        default: CustomTransition,
       },
     })
-
-    // Add routes for all pages to ensure transitions work both ways
-    this.addRoute('.*', '.*', 'default')
+    console.log('pages')
   }
 }
