@@ -8,10 +8,10 @@ export class Pages extends Core {
     super({
       links: 'a:not([target]):not([href^=\\#]):not([data-taxi-ignore])',
       renderers: {
-        default: CustomRenderer,
+        default: DefaultRenderer,
       },
       transitions: {
-        default: CustomTransition,
+        default: DefaultTransition,
       },
     })
     console.log('pages')
