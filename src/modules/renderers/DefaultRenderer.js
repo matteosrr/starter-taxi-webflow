@@ -1,6 +1,6 @@
 import { Renderer } from '@unseenco/taxi'
 
-import Preloader from '../Preloader'
+import Preloader from '../preloader'
 
 export default class DefaultRenderer extends Renderer {
   initialLoad() {
