@@ -5,7 +5,7 @@ export default class Preloader {
     this.duration = 1
     this.preloader_wrapper = document.querySelector('.preloader-w')
     console.log(this.preloader_wrapper)
-
+    alert('Hey byby')
     console.log('Preloader started')
   }
 
