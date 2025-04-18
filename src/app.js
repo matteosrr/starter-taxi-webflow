@@ -9,8 +9,6 @@ class App {
   init() {
     this.pages = new Pages()
     this.scroll = new Scroll()
-
-    console.log('hello worlds')
   }
 }
 

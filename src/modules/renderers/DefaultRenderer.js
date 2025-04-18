@@ -1,9 +1,18 @@
 import { Renderer } from '@unseenco/taxi'
 
+import Preloader from '../Preloader'
+
 export default class DefaultRenderer extends Renderer {
   initialLoad() {
     // run the first time a user enters a page
     console.log('initialLoad')
+
+    const preloader = new Preloader()
+    preloader.init().then(() => {
+      console.log('Preloader finished, now entering page')
+      //this.onEnter()
+      this.onEnterCompleted()
+    })
   }
 
   onEnter() {

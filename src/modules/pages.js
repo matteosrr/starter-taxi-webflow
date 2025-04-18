@@ -14,6 +14,5 @@ export class Pages extends Core {
         default: DefaultTransition,
       },
     })
-    console.log('pages')
   }
 }
