@@ -9,14 +9,16 @@ export default class DefaultTransition extends Transition {
   async onLeave({ from, trigger, done }) {
     console.log('transition:onLeave')
 
-    // This is an example of how you can delay the transition
-    // await new Promise((resolve) => setTimeout(resolve, 1000));
-
+    // Animate all elements with [data-taxi] attribute
     await gsap.to('[data-taxi]', {
       autoAlpha: 0,
       duration: 1,
     })
 
+    // alternative way to delay the transition manually
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Signal that the leave transition is finished
     done()
   }
 
@@ -27,9 +29,7 @@ export default class DefaultTransition extends Transition {
   async onEnter({ to, trigger, done }) {
     console.log('transition:onEnter')
 
-    // This is an example of how you can delay the transition
-    // await new Promise((resolve) => setTimeout(resolve, 1000));
-
+    // Animate all elements with [data-taxi] attribute
     await gsap.to('[data-taxi]', {
       autoAlpha: 1,
       duration: 1,
@@ -37,6 +37,10 @@ export default class DefaultTransition extends Transition {
       delay: 0.5,
     })
 
+    // alternative way to delay the transition manually
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Signal that the leave transition is finished
     done()
   }
 }

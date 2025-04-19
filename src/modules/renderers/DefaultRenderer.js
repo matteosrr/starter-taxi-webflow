@@ -10,7 +10,7 @@ export default class DefaultRenderer extends Renderer {
     const preloader = new Preloader()
     preloader.init().then(() => {
       console.log('Preloader finished, now entering page')
-      //this.onEnter()
+      this.onEnter()
       this.onEnterCompleted()
     })
   }
