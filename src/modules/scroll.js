@@ -1,3 +1,4 @@
+import gsap from 'gsap'
 import Lenis from 'lenis'
 
 export class Scroll extends Lenis {
@@ -16,6 +17,14 @@ export class Scroll extends Lenis {
 
     // Start the animation frame loop
     this.initRaf()
+
+    // Ensure GSAP animations are in sync with Lenis' scroll frame updates.
+    gsap.ticker.add((time) => {
+      this.raf(time * 1000) // Convert GSAP's time to milliseconds for Lenis.
+    })
+
+    // Turn off GSAP's default lag smoothing to avoid conflicts with Lenis.
+    gsap.ticker.lagSmoothing(0)
   }
 
   initRaf() {
@@ -27,3 +36,5 @@ export class Scroll extends Lenis {
     requestAnimationFrame(raf)
   }
 }
+
+export default new Scroll()
