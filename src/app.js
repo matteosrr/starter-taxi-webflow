@@ -12,7 +12,4 @@ class App {
   }
 }
 
-window.Webflow ||= []
-window.Webflow.push(() => {
-  new App()
-})
+new App()

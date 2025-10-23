@@ -1,12 +1,12 @@
-import { gsap } from 'gsap'
+//import { gsap } from 'gsap'
 
 export default class Preloader {
   constructor() {
     // default duration of the prealoder animation timeline
-    this.tl_duration = 1
+    this.tlDuration = 1
 
     // Select the preloader wrapper element from the DOM
-    this.preloader_wrapper = document.querySelector('.preloader-w')
+    this.preloaderWrapper = document.querySelector('.preloader-w')
 
     console.log('Preloader started')
   }
@@ -21,17 +21,17 @@ export default class Preloader {
 
       const preloader_tl = gsap
         .timeline({
-          defaults: { ease: 'power2.out', duration: this.tl_duration },
+          defaults: { ease: 'power2.out', duration: this.tlDuration },
           onComplete: () => {
             console.log('Preloader completed')
-            this.preloader_wrapper.style.display = 'none'
+            this.preloaderWrapper.style.display = 'none'
             resolve()
           },
         })
 
         // Fade out the preloader wrapper with a delay of 3s
         .to(
-          this.preloader_wrapper,
+          this.preloaderWrapper,
           {
             opacity: 0,
           },
